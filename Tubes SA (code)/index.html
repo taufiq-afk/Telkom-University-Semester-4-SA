@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- (Awalan Web) -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TUBES STRATEGI ALGORITMA</title>
+
+    <!-- (Link Font Yang Dipakai) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- (Link CSS Pribadi & Bootstrap) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- (Link AOS Style) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- (Link jQuery) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Algoritma Tombol Dengan jQuery (Kemungkinan 1) -->
+    <script>
+        $(function(){
+            $(document).on("click",".kemungkinan1", function(){
+                var getValue=$(".maintable input:checked").parents("tr").clone().appendTo($(".tablesatu tbody").add(getValue));
+            })
+        })
+    </script>
+    <!-- Algoritma Tombol Dengan jQuery (Kemungkinan 2) -->
+    <script>
+        $(function(){
+            $(document).on("click",".kemungkinan2", function(){
+                var getValue=$(".maintable input:checked").parents("tr").clone().appendTo($(".tabledua tbody").add(getValue));
+            })
+        })
+    </script>
+    <!-- Algoritma Tombol Dengan jQuery (Kemungkinan 3) -->
+    <script>
+        $(function(){
+            $(document).on("click",".kemungkinan3", function(){
+                var getValue=$(".maintable input:checked").parents("tr").clone().appendTo($(".tabletiga tbody").add(getValue));
+            })
+        })
+    </script>
+    <!-- Algoritma Tombol Dengan jQuery (Kemungkinan 4) -->
+    <script>
+        $(function(){
+            $(document).on("click",".kemungkinan4", function(){
+                var getValue=$(".maintable input:checked").parents("tr").clone().appendTo($(".tableempat tbody").add(getValue));
+            })
+        })
+    </script>
+    <!-- Algoritma Tombol Dengan jQuery (Kemungkinan 5) -->
+    <script>
+        $(function(){
+            $(document).on("click",".kemungkinan5", function(){
+                var getValue=$(".maintable input:checked").parents("tr").clone().appendTo($(".tablelima tbody").add(getValue));
+            })
+        })
+    </script>
+    <!-- Algoritma Tombol Dengan jQuery (Kemungkinan 6) -->
+    <script>
+        $(function(){
+            $(document).on("click",".kemungkinan6", function(){
+                var getValue=$(".maintable input:checked").parents("tr").clone().appendTo($(".tableenam tbody").add(getValue));
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <!-- Halaman 1 (Main Menu) -->
+    <section id="title">
+        <div class="container-fluid">
+            <!-- Nav Bar (Menyesuaikan Ukuran Web) -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="#title" data-aos="fade-down" data-aos-duration="3000">Kalkulator Pintar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" data-aos="fade-down" data-aos-duration="3000">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#algoritma1">Brute Force</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#algoritma3">Greedy</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>    
+            <!-- Title (Berisi Halaman Awal Web TuBes) -->
+            <div class="col-lg-12" data-aos="zoom-out" data-aos-duration="3000">
+                <h1 align="center" class="p1">Pemilihan Kombinasi<br>Potongan Harga</h1>
+                <h3 align="center" class="p2">Brute Force Vs Greedy<br>Mana algoritma yang lebih optimal?</h3>
+                <div class="button">
+                    <a class="btn btn-primary button-mulai" data-bs-toggle="collapse" href="#algoritma1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Mulai</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Halaman 2 (Brute Force) -->
+    <section id="algoritma1">
+        <div class="row">
+
+            <!-- Judul Halaman 2 -->
+            <div class="clo-12" data-aos="fade-down" data-aos-anchor-placement="center-bottom" data-aos-duration="2400"> <h3 class="algo" align="center">Brute Force</h3> </div>
+
+            <!-- Halaman 2 (Bagian Kiri) -->
+            <div class="col-6" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1150">
+
+                <!-- Input & Output Awal (Barang, Harga, Diskon) -->
+                <div class="tabel pt-2">
+                    <p>Nama Barang</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="namaBarangBF" placeholder="Enter Input" aria-label="Enter Input">
+                    </div>
+                    <p>Harga Pokok</p>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" id="hargaPokokBF" placeholder="Enter Input" aria-label="Enter Input">
+                    </div>
+                    <p>Harga Jual</p>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" id="hargaJualBF" placeholder="Enter Input" aria-label="Enter Input">
+                    </div>
+                    <p>Besar Potongan Harga</p>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" id="hargaPotonganBF" placeholder="Enter Input" aria-label="Enter Input">
+                    </div>
+                    <!-- Button -->
+                    <button type="button" class="btn btn-secondary btn-sm button-hitung" onclick="hitungBruteForce2()">Hitung</button>
+                    <!-- Button -->
+                    <p class="untung">Keuntungan</p>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control output" id="keuntunganBF" placeholder="Output" aria-label="Output" readonly>
+                    </div>
+                    <p>Waktu Eksekusi</p>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control output" id="waktuBF" placeholder="Output" aria-label="Output" readonly>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Halaman 2 (Bagian Kanan) -->
+            <div class="col-6" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500">
+
+                <!-- Output Tabel (Barang, Keuntungan, Waktu Eksekusi) -->
+                <div class="row">
+                    <div class="col tabel-output">
+                        <table class="table maintable" id="tabelBF">
+                            <thead>
+                                <tr>
+                                    <th class="judul-tabel" scope="col">Nama Barang</th>
+                                    <th class="judul-tabel" scope="col">Keuntungan</th>
+                                    <th class="judul-tabel" scope="col">Opsi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tombol Untuk Menghapus Isi Tabel -->
+                <div class="row pt-1">
+                    <div class="col-12 vertical-button">
+                        <button type="button" class="btn btn-secondary btn-sm button-table" onclick="hapusSemuaDataBF()">Hapus Semua</button>
+                    </div>
+                </div>
+
+                <!-- Tombol Mencari Kemungkinan 1-6 -->
+                <div class="row">
+                    <div class="col-6">
+                        <div class="vertical-button pt-1">
+                            <button type="button" class="btn btn-secondary btn-sm button-table kemungkinan1">Kemungkinan - 1</button>
+                        </div>
+                        <div class="vertical-button pt-1">
+                            <button type="button" class="btn btn-secondary btn-sm button-table kemungkinan2">Kemungkinan - 2</button>
+                        </div>
+                        <div class="vertical-button pt-1">
+                            <button type="button" class="btn btn-secondary btn-sm button-table kemungkinan3">Kemungkinan - 3</button>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="vertical-button pt-1">
+                            <button type="button" class="btn btn-secondary btn-sm button-table kemungkinan4">Kemungkinan - 4</button>
+                        </div>
+                        <div class="vertical-button pt-1">
+                            <button type="button" class="btn btn-secondary btn-sm button-table kemungkinan5">Kemungkinan - 5</button>
+                        </div>
+                        <div class="vertical-button pt-1">
+                            <button type="button" class="btn btn-secondary btn-sm button-table kemungkinan6">Kemungkinan - 6</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Halaman 3 (Brute Force: output semua kemungkinan) -->
+    <section id="algoritma2">
+        <div class="row">
+
+            <!-- Halaman 3 (Bagian Atas) -->
+            <div class="col-12" data-aos="fade-down" data-aos-anchor-placement="top-center" data-aos-duration="2000">
+                <div class="row"> <!-- 3 Tabel Atas (1,3,5) -->
+                    <div class="col-4">
+                        <p class="judul-kemungkinan" > Kemungkinan 1 </p>
+                        <div class="row">
+                            <div class="col tabel-output">
+                                <table class="table tablesatu" id="tabelBF1">
+                                    <thead>
+                                        <tr>
+                                            <th class="judul-tabel" scope="col">Nama Barang</th>
+                                            <th class="judul-tabel" scope="col">Keuntungan</th>
+                                            <th class="judul-tabel" scope="col">Opsi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <p class="judul-kemungkinan" > Kemungkinan 3 </p>
+                        <div class="row">
+                            <div class="col tabel-output">
+                                <table class="table tabletiga" id="tabelBF3">
+                                    <thead>
+                                        <tr>
+                                            <th class="judul-tabel" scope="col">Nama Barang</th>
+                                            <th class="judul-tabel" scope="col">Keuntungan</th>
+                                            <th class="judul-tabel" scope="col">Opsi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4"> 
+                        <p class="judul-kemungkinan" > Kemungkinan 5 </p>
+                        <div class="row">
+                            <div class="col tabel-output">
+                                <table class="table tablelima" id="tabelBF5">
+                                    <thead>
+                                        <tr>
+                                            <th class="judul-tabel" scope="col">Nama Barang</th>
+                                            <th class="judul-tabel" scope="col">Keuntungan</th>
+                                            <th class="judul-tabel" scope="col">Opsi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row"> <!-- 3 Tabel Atas (2,4,6) -->
+                    <div class="col-4">
+                        <p class="judul-kemungkinan" > Kemungkinan 2 </p>
+                        <div class="row">
+                            <div class="col tabel-output">
+                                <table class="table tabledua" id="tabelBF2">
+                                    <thead>
+                                        <tr>
+                                            <th class="judul-tabel" scope="col">Nama Barang</th>
+                                            <th class="judul-tabel" scope="col">Keuntungan</th>
+                                            <th class="judul-tabel" scope="col">Opsi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <p class="judul-kemungkinan" > Kemungkinan 4 </p>
+                        <div class="row">
+                            <div class="col tabel-output">
+                                <table class="table tableempat" id="tabelBF4">
+                                    <thead>
+                                        <tr>
+                                            <th class="judul-tabel" scope="col">Nama Barang</th>
+                                            <th class="judul-tabel" scope="col">Keuntungan</th>
+                                            <th class="judul-tabel" scope="col">Opsi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="row">
+                            <p class="judul-kemungkinan" > Kemungkinan 6 </p>
+                            <div class="col tabel-output">
+                                <table class="table tableenam" id="tabelBF6">
+                                    <thead>
+                                        <tr>
+                                            <th class="judul-tabel" scope="col">Nama Barang</th>
+                                            <th class="judul-tabel" scope="col">Keuntungan</th>
+                                            <th class="judul-tabel" scope="col">Opsi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <!-- Halaman 3 (Bagian Bawah) -->
+            <div class="col-3" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="3000">
+                <!-- Tombol Untuk Output Akhir (Barang Yang Dipilih, Total Profit, Waktu Eksekusi) -->
+                <div class="row jarak-tombolBF">
+                    <div class="vertical-button">
+                        <button type="button" class="btn btn-secondary btn-sm button-table" onclick="BarangAkhirBF()">Barang Diskon</button>
+                    </div>
+                </div>
+                <div class="row jarak-tombolBF">
+                    <div class="vertical-button">
+                        <button type="button" class="btn btn-secondary btn-sm button-table" onclick="ProfitAkhirBF()">Total Profit</button>
+                    </div>
+                </div>
+                <div class="row jarak-tombolBF">
+                    <div class="vertical-button">
+                        <button type="button" class="btn btn-secondary btn-sm button-table" onclick="waktuAkhirBF()">Waktu Eksekusi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-duration="3000">
+                <!-- Output Akhir (Barang Yang Dipilih, Total Profit, Waktu Eksekusi) -->
+                <div class="row jarak-outputBF">
+                    <div class="input-group mb-3 vertical-button">
+                        <input type="text" class="form-control output" id="BarangAkhirBF" placeholder="                         Barang Yang Mendapat Diskon" aria-label="                         Barang Yang Mendapat Diskon" readonly>
+                    </div>
+                    <div class="input-group mb-3 vertical-button">
+                        <input type="text" class="form-control output" id="ProfitAkhirBF" placeholder="                             Total Profit Setelah Diskon" aria-label="                             Total Profit Setelah Diskon" readonly>
+                    </div>
+                    <div class="input-group mb-3 vertical-button">
+                        <input type="text" class="form-control output" id="waktuAkhirBF" placeholder="                      Waktu Eksekusi Algoritma Greedy" aria-label="                      Waktu Eksekusi Algoritma Greedy" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Halaman 4 (Greedy) -->
+    <section id="algoritma3">
+        <div class="row">
+
+            <!-- Judul Halaman 4 -->
+            <div class="clo-12" data-aos="fade-down" data-aos-anchor-placement="center-bottom" data-aos-duration="3000"> <h3 class="algo" align="center">Greedy</h3> </div>
+
+            <!-- Halaman 4 (Bagian Kiri) -->
+            <div class="col-6" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="2000">
+
+                <!-- Input & Output Awal (Barang, Harga, Diskon) -->
+                <div class="tabel">
+                    <p>Nama Barang</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="namaBarangG" name="namaBarangG" placeholder="Enter Input" aria-label="Enter Input">
+                    </div>
+                    <p>Harga Pokok</p>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" id="hargaPokokG" placeholder="Enter Input" aria-label="Enter Input">
+                    </div>
+                    <p>Harga Jual</p>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" id="hargaJualG" placeholder="Enter Input" aria-label="Enter Input">
+                    </div>
+                    <p>Besar Potongan Harga</p>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" id="hargaPotonganG" placeholder="Enter Input" aria-label="Enter Input">
+                    </div>
+                    <!-- Button -->
+                    <button type="button" class="btn btn-secondary btn-sm button-hitung" onclick="hitungGreedy2()">Hitung</button>
+                    <!-- Button -->
+                    <p class="untung">Keuntungan</p>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control output" id="keuntunganG" placeholder="Output" aria-label="Output" readonly>
+                    </div>
+                    <p>Waktu Eksekusi</p>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control output" id="waktuG" placeholder="Output" aria-label="Output" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Halaman 4 (Bagian Kanan) -->
+            <div class="col-6" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="3000">
+
+                <!-- Output Tabel (Barang, Keuntungan, Waktu Eksekusi) -->
+                <div class="row">
+                    <div class="col tabel-output">
+                        <table class="table table-striped tabel-output" id="tabelG">
+                            <thead>
+                                <tr>
+                                    <th class="judul-tabel" scope="col">Nama Barang</th>
+                                    <th class="judul-tabel" scope="col">Keuntungan</th>
+                                    <th class="judul-tabel" scope="col">Waktu Eksekusi</th>
+                                    <th class="judul-tabel" scope="col">Hapus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tombol Untuk Mengurutkan & Menghapus Isi Tabel -->
+                <div class="row pt-2">
+                    <div class="col-6 vertical-button">
+                        <button type="button" class="btn btn-secondary btn-sm button-table" onclick="profitG()">Keuntungan</button>
+                    </div>
+                    <div class="col-6 vertical-button">
+                        <button type="button" class="btn btn-secondary btn-sm button-table" onclick="hapusSemuaDataG()">Hapus Semua</button>
+                    </div>
+                </div>
+
+                <!-- Tombol Untuk Output Akhir (Barang Yang Dipilih, Total Profit, Waktu Eksekusi) -->
+                <div class="row pt-2">
+                    <div class="col-4 vertical-button">
+                        <button type="button" class="btn btn-secondary btn-sm button-table" onclick="BarangAkhirG()">Barang Diskon</button>
+                    </div>
+                    <div class="col-4 vertical-button">
+                        <button type="button" class="btn btn-secondary btn-sm button-table" onclick="ProfitAkhirG()">Total Profit</button>
+                    </div>
+                    <div class="col-4 vertical-button">
+                        <button type="button" class="btn btn-secondary btn-sm button-table" onclick="waktuAkhirG()">Waktu Eksekusi</button>
+                    </div>
+                </div>
+
+                <!-- Output Akhir (Barang Yang Dipilih, Total Profit, Waktu Eksekusi) -->
+                <div class="row jarak-outputG">
+                    <div class="input-group mb-3 vertical-button">
+                        <input type="text" class="form-control output" id="BarangAkhirG" placeholder="                         Barang Yang Mendapat Diskon" aria-label="                         Barang Yang Mendapat Diskon" readonly>
+                    </div>
+                    <div class="input-group mb-3 vertical-button">
+                        <input type="text" class="form-control output" id="ProfitAkhirG" placeholder="                             Total Profit Setelah Diskon" aria-label="                             Total Profit Setelah Diskon" readonly>
+                    </div>
+                    <div class="input-group mb-3 vertical-button">
+                        <input type="text" class="form-control output" id="waktuAkhirG" placeholder="                      Waktu Eksekusi Algoritma Greedy" aria-label="                      Waktu Eksekusi Algoritma Greedy" readonly>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- (Script Brute Force & Greedy) -->
+    <script type="text/javascript" src="js/indexBF.js"></script>
+    <script type="text/javascript" src="js/indexG.js"></script>
+
+    <!-- (Script Bootstrap ) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- (Script AOS) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
